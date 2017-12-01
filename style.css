@@ -1,13 +1,22 @@
 body {
+	/* Define o grid layout como display */
 	display: grid;
+	/* Define nomes para cada área do grid (3x3) */
 	grid-template-areas:
 		"header header header"
 		"aside main main"
 		"footer footer footer";
+	/* Define o espaçamento entre as celulas do grid */
+	grid-gap: 1rem;
+	/* Tamanho das colunas */
+	grid-template-columns: auto auto auto;
+	/* Tamanho das celulas (80vh = 80% do tamanho do viewport - as demais celulas são ajustadas automaticamente) */
+	grid-template-rows: auto 80vh auto;
 }
 
 .o-header {
 	grid-area: header;
+	padding: 1.5rem;
 }
 
 .o-aside {
@@ -20,4 +29,10 @@ body {
 
 .o-footer {
 	grid-area: footer;
+	padding: 1.5rem;
+}
+
+.o-header, .o-aside, .o-main, .o-footer {
+	background-color: #00f;
+	color: #fff;
 }
